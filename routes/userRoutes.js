@@ -92,6 +92,11 @@ router.get('/profile', jwtAuthMiddleware, async (req, res) => {
     }
 })
 
+
+router.get('/', (req,res)=>{
+    res.send("Welcome to home of voting app")
+})
+
 router.put('/profile/password', jwtAuthMiddleware, async (req, res) => {
     try {
         const userId = req.user.id; // Extract the id from the token
